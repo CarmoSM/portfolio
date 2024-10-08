@@ -1,0 +1,349 @@
+/* General Styles */
+body {
+    background-color: #FBF0D9;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+    width: 100%;
+}
+
+/* Top Fixed Line */
+.top-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FBF0D9;
+    display: flex;
+    align-items: center;
+    padding: 1px 1px;
+    z-index: 1000;
+}
+
+.designer {
+    margin-right: 5px;
+}
+
+.divider {
+    flex-grow: 1;
+    height: 2px;
+    background-color: black;
+}
+
+.years {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1900px;
+}
+
+.year {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Header */
+header {
+    position: relative;
+    text-align: left;
+    padding: 90px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-container {
+    display: flex;
+    align-items: flex-start;
+    /* Alinha os itens ao topo */
+    position: relative;
+    /* Para permitir o posicionamento absoluto do quadrado */
+}
+
+.title {
+
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 4em;
+    /* Increased font size */
+    position: relative;
+    /* Para permitir a sobreposição */
+    z-index: 1;
+    /* Para garantir que as letras fiquem acima do quadrado */
+}
+
+.title p {
+    margin: 0;
+    /* Remove a margem padrão dos parágrafos */
+    line-height: 1;
+    /* Define a altura da linha */
+}
+
+.title:hover {
+    color: #B02B29;
+}
+
+.square {
+
+    width: 100px;
+    height: 100px;
+    background-color: #B02B29;
+    position: absolute;
+    /* Permite o posicionamento do quadrado */
+    top: -2px;
+    /* Move o quadrado para cima */
+    left: -38px;
+    /* Move o quadrado para a esquerda */
+    z-index: 0;
+    /* Para garantir que o quadrado fique atrás do texto */
+}
+
+.quote-container {
+    position: absolute;
+    top: 100px;
+    right: 310px;
+    font-size: 0.7em;
+}
+
+/* Image Styles */
+.images {
+    width: 980px;
+    height: auto;
+    margin: 3px auto;
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    /* Mantenha a navegação no topo */
+    right: 0;
+    /* Alinha a navegação à direita */
+    margin: 0;
+    /* Remove a margem */
+    background-color: #FBF0D9;
+    /* Fundo igual ao do corpo */
+    display: flex;
+    /* Usar flexbox para alinhar elementos */
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Remove a margem */
+    display: flex;
+    /* Alinha os itens horizontalmente */
+}
+
+nav li {
+    margin: 0 15px;
+    /* Ajusta a margem horizontal */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+/* Button Section */
+.button-section {
+    position: fixed;
+    right: 20px;
+    /* Mover para o lado direito */
+    top: 80px;
+    /* Ajustar a posição vertical abaixo do "NOW" */
+    display: flex;
+    flex-direction: row;
+    /* Alinhar horizontalmente */
+    align-items: center;
+    /* Alinha os botões no centro verticalmente */
+}
+
+.button {
+    background-color: #B02B29;
+    color: #FBF0D9;
+    padding: 10px 15px;
+    /* Ajustar o padding */
+    margin: 0 5px;
+    /* Espaçamento entre os botões */
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #FBF0D9;
+    /* Contorno mais pequeno */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #FBF0D9;
+    color: #B02B29;
+}
+
+/* Sections */
+section {
+    width: 80%;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: right;
+    /* Alinha o texto à direita */
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: #B02B29;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-left: -60px; /* Move o texto 20px para a esquerda */
+}
+
+/* Sections */
+section {
+    width: 80%;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: left;
+    padding-top: 100px;
+}
+
+.section-title {
+    font-size: 2.5em;
+    /* Tamanho do título da seção */
+    color: #B02B29;
+    /* Cor do título da seção */
+    font-weight: 600;
+    /* Peso da fonte para título da seção */
+    margin-bottom: 20px;
+}
+
+/* About Me Section */
+#about p {
+    width: 500px;
+    font-weight: 300; /* Peso da fonte para parágrafos */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    font-size: 1.1em; /* Tamanho da fonte para parágrafos */
+    margin-left: -60px; /* Move o texto 20px para a esquerda */
+}
+
+
+/* Projects Section */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Layout em grid */
+    gap: 20px;
+    /* Espaço entre projetos */
+}
+
+.project-item {
+    background-color: #B02B29;
+    /* Cor de fundo para projetos */
+    color: #FBF0D9;
+    /* Cor do texto para projetos */
+    padding: 40px;
+    /* Preenchimento para projetos */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+    /* Peso da fonte para projetos */
+}
+
+.project-item:hover {
+    background-color: #FBF0D9;
+    /* Cor de fundo ao passar o mouse */
+    color: #B02B29;
+    /* Cor do texto ao passar o mouse */
+    border: 2px solid #B02B29;
+    /* Borda ao passar o mouse */
+}
+
+/* Global Reset for Box Sizing */
+* {
+    box-sizing: border-box;
+    /* Inclui padding e bordas no cálculo da largura */
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove preenchimentos padrão */
+}
+
+/* Contacts Section */
+#contacts {
+    background-color: #B02B29;
+    /* Cor de fundo para seção de contatos */
+    color: #FBF0D9;
+    /* Cor do texto para seção de contatos */
+    padding: 30px 0;
+    /* Preenchimento superior e inferior, mas sem lateral */
+    text-align: center;
+    /* Centraliza o texto */
+    width: 100vw;
+    /* Faz a seção ocupar toda a largura da viewport */
+    position: relative;
+    /* Garante que a posição seja relativa ao fluxo normal */
+    left: 0;
+    /* Alinha a seção à esquerda da tela */
+    right: 0;
+    /* Alinha a seção à direita da tela */
+}
+
+.contact-item {
+    margin: 15px 0;
+    /* Margem entre itens de contato */
+    font-size: 1.1em;
+    /* Tamanho da fonte para contatos */
+    text-align: center;
+    /* Alinha o texto à direita */
+}
+
+.contact-item a {
+    color: #FBF0D9;
+    /* Cor do link */
+    text-decoration: none;
+    /* Sem sublinhado no link */
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    /* Sublinhado ao passar o mouse */
+}
+
+/* Icons */
+.icon {
+    margin-right: 10px;
+    /* Espaço à direita dos ícones */
+}
+
+/* Vertical Line */
+.vertical-line {
+    width: 2px; /* Largura da linha vertical */
+    background-color: black; /* Cor da linha */
+    height: 600px; /* Altura da linha */
+    position: absolute; /* Permite posicionamento absoluto */
+    left: 150px; /* Centraliza a linha vertical entre as seções */
+    top: 930px; /* Início no topo */
+}
+
+/* Right Side Name */
+.right-name {
+    position: absolute; /* Fixa à direita */
+    top: 50%; /* Centraliza verticalmente */
+    right: 5px; /* Alinha à direita */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    padding: 30px; /* Preenchimento interno */
+    writing-mode: vertical-rl; /* Texto vertical */
+    text-align: center; /* Centraliza o texto */
+    height: 700px;
+}
+
+
