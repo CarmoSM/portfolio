@@ -234,6 +234,55 @@ section {
     margin-left: -60px; /* Move o texto 20px para a esquerda */
 }
 
+/* images auto scroll */
+
+.scroller-wrapper {
+    /* How long one slide is visible on screen (from entering screen to leaving it) */
+    --scrolling-gallery-item-duration: 12s;
+    /* How many items we want to see on screen at once */
+    --scrolling-gallery-items-visible: 8;
+    /* How many items are to scroll */
+    --scrolling-gallery-items-total: 10;
+    overflow-x: hidden;
+    will-change: transform;
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.scroller {
+    animation-duration: calc(var(--scrolling-gallery-item-duration, 1s) / var(--scrolling-gallery-items-visible) * var(--scrolling-gallery-items-total));
+    animation-timing-function: linear;
+    animation-name: scrolling-gallery;
+    animation-iteration-count: infinite;
+    display: flex;
+    white-space: nowrap;
+    gap: 30px;
+}
+
+.scroller-container {
+    /* Without this, scroll will jump on desktop if any vertical scrollbar is shown */
+    width: 100vw;
+}
+
+.scroller-item {
+    flex: 1 0 calc(100% / var(--scrolling-gallery-items-visible));
+    /* If you want to have it continuous without any spaces, remove two lines below */
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.scroller img {
+    display: block;
+    height: 220px; /* sizes of the images */
+    object-fit: cover;
+    object-position: center;
+    width: 150px; /* sizes of the images */
+    transition: transform 0.3s ease;
+}
 
 /* Projects Section */
 .project-list {
