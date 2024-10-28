@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAWS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="./draws.css" rel="stylesheet">
+
+<body>
+    <!-- Top Fixed Line -->
+    <div class="top-line">
+        <span class="designer">DESIGNER</span>
+        <hr class="divider">
+        <div class="years">
+            <hr class="divider">
+            <span class="year">2019</span>
+            <hr class="divider">
+            <span class="year">NOW</span>
+            <hr class="divider">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="http://localhost/portfolio/index.html#about">About Me</a></li>
+            <li><a href="http://localhost/portfolio/index.html#projects">Projects</a></li>
+            <li><a href="http://localhost/portfolio/index.html#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <h1>Draws</h1>
+    <p>
+        This showcase presents a selection of my drawings created with various techniques, such as charcoal, pencil, and
+        watercolor. The works include quick sketches, portraits, and observational studies, each exploring different
+        aspects of form, light, and expression. Through these diverse methods, I aimed to capture unique textures and
+        emotions, developing my skills across different styles and artistic approaches.
+    </p>
+
+    <!-- Image Carousel -->
+    <div class="image-carousel">
+        <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+        <img id="carouselImage" src="illustrations/retrato1.png" alt="Image" class="active">
+        <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script>
+        const images = [
+            'illustrations/retrato1.png',
+            'illustrations/refugiada2.png',
+            'illustrations/casa.png',
+            'illustrations/cao.png',
+            'illustrations/sapatos.png',
+            'illustrations/rezar.png',
+            'illustrations/mae.png',
+            'illustrations/ginasta.png',
+            'illustrations/pessoas.png',
+            'illustrations/aguarela1.png',
+            'illustrations/aguarela2.png',
+            'illustrations/cafe.png',
+            'illustrations/menina.png',
+            'illustrations/tinta.png',
+            'illustrations/tlm.png',
+        ];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('carouselImage').src = images[currentIndex];
+        }
+
+        // Função para verificar se as imagens estão carregando
+        window.onload = function () {
+            images.forEach((image, index) => {
+                const img = new Image();
+                img.src = image;
+                img.onload = function () {
+                    console.log(`Image ${index + 1} loaded: ${image}`);
+                };
+                img.onerror = function () {
+                    console.error(`Image ${index + 1} failed to load: ${image}`);
+                };
+            });
+        };
+    </script>
+
+</body>
+
+</html>

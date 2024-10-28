@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JÓIA DE ÁFRICA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="./fanzine.css" rel="stylesheet">
+
+<body>
+    <!-- Top Fixed Line -->
+    <div class="top-line">
+        <span class="designer">DESIGNER</span>
+        <hr class="divider">
+        <div class="years">
+            <hr class="divider">
+            <span class="year">2019</span>
+            <hr class="divider">
+            <span class="year">NOW</span>
+            <hr class="divider">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="http://localhost/portfolio/index.html#about">About Me</a></li>
+            <li><a href="http://localhost/portfolio/index.html#projects">Projects</a></li>
+            <li><a href="http://localhost/portfolio/index.html#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <h1>Jóia de África</h1>
+    <p>
+        In collaboration with the Aga Khan Foundation, we developed the "Jóia de África" project, where we were tasked
+        with creating a new brand identity for a private chef offering exclusive African culinary experiences in
+        clients' homes. This brand identity work involved designing the logo, color palette, patterns, and conducting
+        benchmarking to position the brand as unique and authentic. <p>
+        Additionally, we created an innovative workstation: a functional backpack made of wood, precisely cut to fold,
+        painted, and covered with custom-printed fabric. This design allows for easy transportation of utensils and
+        ingredients, reducing strain on the back. The elegant and formal design reflects the sophistication of the
+        brand, combining practicality with aesthetics to embody the essence of African cuisine in every detail.</p>
+    </p>
+
+    <!-- Image Carousel -->
+    <div class="image-carousel">
+        <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+        <img id="carouselImage" src="JoiaDeAfrica/japrincipal.jpg" alt="Image" class="active">
+        <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script>
+        const images = [
+            'JoiaDeAfrica/japrincipal.jpg',
+            'JoiaDeAfrica/jagavetas.jpg',
+            'JoiaDeAfrica/jaaberto.jpg',
+            'JoiaDeAfrica/japrincipalformas.jpg',
+            'JoiaDeAfrica/jalateral.jpg',
+        ];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('carouselImage').src = images[currentIndex];
+        }
+
+        // Função para verificar se as imagens estão carregando
+        window.onload = function () {
+            images.forEach((image, index) => {
+                const img = new Image();
+                img.src = image;
+                img.onload = function () {
+                    console.log(`Image ${index + 1} loaded: ${image}`);
+                };
+                img.onerror = function () {
+                    console.error(`Image ${index + 1} failed to load: ${image}`);
+                };
+            });
+        };
+    </script>
+
+</body>
+
+</html>

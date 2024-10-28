@@ -203,7 +203,8 @@ section {
     color: #B02B29;
     font-weight: 600;
     margin-bottom: 20px;
-    margin-left: -60px; /* Move o texto 20px para a esquerda */
+    margin-left: -60px;
+    /* Move o texto 20px para a esquerda */
 }
 
 /* Sections */
@@ -227,30 +228,48 @@ section {
 
 /* About Me Section */
 #about p {
-    width: 500px;
-    font-weight: 300; /* Peso da fonte para parágrafos */
-    line-height: 1.6; /* Espaçamento entre linhas */
-    font-size: 1.1em; /* Tamanho da fonte para parágrafos */
-    margin-left: -60px; /* Move o texto 20px para a esquerda */
+    width: 1000px;
+    font-weight: 300;
+    /* Peso da fonte para parágrafos */
+    line-height: 1.6;
+    /* Espaçamento entre linhas */
+    font-size: 1.1em;
+    /* Tamanho da fonte para parágrafos */
+    margin-left: -60px;
+    /* Move o texto 20px para a esquerda */
 }
 
 /* images auto scroll */
 
 .scroller-wrapper {
     /* How long one slide is visible on screen (from entering screen to leaving it) */
-    --scrolling-gallery-item-duration: 12s;
+    --scrolling-gallery-item-duration: 20s;
     /* How many items we want to see on screen at once */
     --scrolling-gallery-items-visible: 8;
     /* How many items are to scroll */
-    --scrolling-gallery-items-total: 10;
+    --scrolling-gallery-items-total: 11;
     overflow-x: hidden;
     will-change: transform;
     display: flex;
     white-space: nowrap;
     position: absolute;
+    margin-top: -10px;
+    margin-right: 0px;
     bottom: 0;
     width: 100%;
 }
+
+/* Scroller Wrapper */
+.scroller-wrapper {
+    overflow: hidden;
+    /* Oculta o conteúdo que está fora do viewport */
+    width: 100%;
+    /* Largura total do contêiner */
+    position: relative;
+    /* Necessário para posicionamento absoluto dos itens */
+}
+
+/* Scroller */
 
 .scroller {
     animation-duration: calc(var(--scrolling-gallery-item-duration, 1s) / var(--scrolling-gallery-items-visible) * var(--scrolling-gallery-items-total));
@@ -260,28 +279,34 @@ section {
     display: flex;
     white-space: nowrap;
     gap: 30px;
+    animation: scrolling 30s linear infinite;
 }
 
-.scroller-container {
-    /* Without this, scroll will jump on desktop if any vertical scrollbar is shown */
-    width: 100vw;
-}
-
+/* Scroller Item */
 .scroller-item {
-    flex: 1 0 calc(100% / var(--scrolling-gallery-items-visible));
-    /* If you want to have it continuous without any spaces, remove two lines below */
-    box-sizing: border-box;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    min-width: 200px;
+    /* Largura mínima de cada item */
+    margin: 0 10px;
+    /* Margem entre as imagens */
 }
 
 .scroller img {
-    display: block;
-    height: 220px; /* sizes of the images */
+    width: 200px;
+    height: 250px;
     object-fit: cover;
-    object-position: center;
-    width: 150px; /* sizes of the images */
-    transition: transform 0.3s ease;
+}
+
+/* Animação para rolar as imagens */
+@keyframes scrolling {
+    0% {
+        transform: translateX (0);
+        /* Início na posição original */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Move para a esquerda */
+    }
 }
 
 /* Projects Section */
@@ -291,6 +316,7 @@ section {
     /* Layout em grid */
     gap: 20px;
     /* Espaço entre projetos */
+    text-decoration: none; 
 }
 
 .project-item {
@@ -305,6 +331,12 @@ section {
     transition: background-color 0.3s, color 0.3s;
     font-weight: 600;
     /* Peso da fonte para projetos */
+    text-decoration: none;
+}
+
+.project-item a {
+    color: white;
+    text-decoration: none;
 }
 
 .project-item:hover {
@@ -328,24 +360,16 @@ section {
 
 /* Contacts Section */
 #contacts {
-    background-color: #B02B29;
-    /* Cor de fundo para seção de contatos */
-    color: #FBF0D9;
-    /* Cor do texto para seção de contatos */
-    padding: 30px 0;
-    /* Preenchimento superior e inferior, mas sem lateral */
-    text-align: center;
-    /* Centraliza o texto */
-    width: 100vw;
-    /* Faz a seção ocupar toda a largura da viewport */
-    position: relative;
-    /* Garante que a posição seja relativa ao fluxo normal */
-    left: 0;
-    /* Alinha a seção à esquerda da tela */
-    right: 0;
-    /* Alinha a seção à direita da tela */
+    background-color: #B02B29; /* Cor de fundo para seção de contatos */
+    color: #FBF0D9; /* Cor do texto para seção de contatos */
+    padding: 30px 0; /* Preenchimento superior e inferior, mas sem lateral */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Faz a seção ocupar toda a largura da viewport */
+    margin-top: 40px; /* Margem superior para afastar da seção de projetos */
+    position: relative; /* Garante que a posição seja relativa ao fluxo normal */
+    left: 0; /* Alinha a seção à esquerda da tela */
+    right: 0; /* Alinha a seção à direita da tela */
 }
-
 .contact-item {
     margin: 15px 0;
     /* Margem entre itens de contato */
@@ -375,24 +399,35 @@ section {
 
 /* Vertical Line */
 .vertical-line {
-    width: 2px; /* Largura da linha vertical */
-    background-color: black; /* Cor da linha */
-    height: 600px; /* Altura da linha */
-    position: absolute; /* Permite posicionamento absoluto */
-    left: 150px; /* Centraliza a linha vertical entre as seções */
-    top: 930px; /* Início no topo */
+    width: 2px;
+    /* Largura da linha vertical */
+    background-color: black;
+    /* Cor da linha */
+    height: 680px;
+    /* Altura da linha */
+    position: absolute;
+    /* Permite posicionamento absoluto */
+    left: 150px;
+    /* Centraliza a linha vertical entre as seções */
+    top: 930px;
+    /* Início no topo */
 }
 
 /* Right Side Name */
 .right-name {
-    position: absolute; /* Fixa à direita */
-    top: 50%; /* Centraliza verticalmente */
-    right: 5px; /* Alinha à direita */
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    padding: 30px; /* Preenchimento interno */
-    writing-mode: vertical-rl; /* Texto vertical */
-    text-align: center; /* Centraliza o texto */
+    position: absolute;
+    /* Fixa à direita */
+    top: 50%;
+    /* Centraliza verticalmente */
+    right: 5px;
+    /* Alinha à direita */
+    transform: translateY(-50%);
+    /* Centraliza verticalmente */
+    padding: 30px;
+    /* Preenchimento interno */
+    writing-mode: vertical-rl;
+    /* Texto vertical */
+    text-align: center;
+    /* Centraliza o texto */
     height: 700px;
 }
-
-

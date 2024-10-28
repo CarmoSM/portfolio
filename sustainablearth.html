@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUSTAINABLEARTH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="./sustainablearth.css" rel="stylesheet">
+
+<body>
+    <!-- Top Fixed Line -->
+    <div class="top-line">
+        <span class="designer">DESIGNER</span>
+        <hr class="divider">
+        <div class="years">
+            <hr class="divider">
+            <span class="year">2019</span>
+            <hr class="divider">
+            <span class="year">NOW</span>
+            <hr class="divider">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="http://localhost/portfolio/index.html#about">About Me</a></li>
+            <li><a href="http://localhost/portfolio/index.html#projects">Projects</a></li>
+            <li><a href="http://localhost/portfolio/index.html#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <h1>Sustainablearth</h1>
+    <p>
+        In partnership with the Aga Khan Foundation, we undertook the complete rebranding of Sustainablearth, an
+        environmental consultancy based in Africa. Before the rebranding, the company lacked a defined brand identity.
+        Our work involved creating a new logo, iconography, patterns, and mockups, giving the company a fresh, cohesive
+        look that reflects its mission. Sustainablearth specializes in assessing and managing the environmental impact
+        of human activities, focusing on risk management, ecosystem restoration, and sustainability education.<p>
+
+        The new brand identity captures the essence of Sustainablearth's commitment to promoting responsible development
+        and environmental stewardship. With a modern and professional look, the brand now effectively communicates the
+        company’s dedication to balancing human activities with nature, empowering businesses across Africa to adopt
+        sustainable practices.</p>
+    </p>
+
+    <!-- Image Carousel -->
+    <div class="image-carousel">
+        <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+        <img id="carouselImage" src="Sustainablearth/logo.png" alt="Image" class="active">
+        <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script>
+        const images = [
+            'Sustainablearth/logo.png',
+            'Sustainablearth/logo2.png',
+            'Sustainablearth/pattern.png',
+            'Sustainablearth/mockup1.png',
+            'Sustainablearth/mockup2.png',
+            'Sustainablearth/mockup3.png',
+            'Sustainablearth/mockup4.png',
+            'Sustainablearth/mockup5.png',
+            'Sustainablearth/mockup6.png',
+        ];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('carouselImage').src = images[currentIndex];
+        }
+
+        // Função para verificar se as imagens estão carregando
+        window.onload = function () {
+            images.forEach((image, index) => {
+                const img = new Image();
+                img.src = image;
+                img.onload = function () {
+                    console.log(`Image ${index + 1} loaded: ${image}`);
+                };
+                img.onerror = function () {
+                    console.error(`Image ${index + 1} failed to load: ${image}`);
+                };
+            });
+        };
+    </script>
+
+</body>
+
+</html>

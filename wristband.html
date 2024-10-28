@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WRISTBAND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="wristband.css" rel="stylesheet">
+
+<body>
+    <!-- Top Fixed Line -->
+    <div class="top-line">
+        <span class="designer">DESIGNER</span>
+        <hr class="divider">
+        <div class="years">
+            <hr class="divider">
+            <span class="year">2019</span>
+            <hr class="divider">
+            <span class="year">NOW</span>
+            <hr class="divider">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="http://localhost/portfolio/index.html#about">About Me</a></li>
+            <li><a href="http://localhost/portfolio/index.html#projects">Projects</a></li>
+            <li><a href="http://localhost/portfolio/index.html#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <h1>Wristband</h1>
+    <p>
+        In collaboration with ColorADD, we developed an innovative wristband designed to assist blind individuals with
+        everyday tasks, such as filling a water bottle. Often, we overlook how simple actions can be challenging for
+        others, but this wristband addresses those difficulties in a practical way.<p>
+
+        The wristband emits a sound and gently vibrates when the water reaches the desired level, allowing the user to
+        know precisely when to stop. This solution empowers blind individuals by providing greater independence in their
+        daily lives, making tasks that rely on visual cues more accessible and intuitive.</p>
+    </p>
+
+    <!-- Image Carousel -->
+    <div class="image-carousel">
+        <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+        <img id="carouselImage" src="wristband/1.png" alt="Image" class="active">
+        <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script>
+        const images = [
+            'wristband/1.png',
+            'wristband/2.png',
+            'wristband/3.png',
+        ];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('carouselImage').src = images[currentIndex];
+        }
+
+        // Função para verificar se as imagens estão carregando
+        window.onload = function () {
+            images.forEach((image, index) => {
+                const img = new Image();
+                img.src = image;
+                img.onload = function () {
+                    console.log(`Image ${index + 1} loaded: ${image}`);
+                };
+                img.onerror = function () {
+                    console.error(`Image ${index + 1} failed to load: ${image}`);
+                };
+            });
+        };
+    </script>
+
+</body>
+
+</html>

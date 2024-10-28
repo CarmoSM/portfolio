@@ -1,0 +1,153 @@
+/* Top Fixed Line */
+.top-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FBF0D9;
+    display: flex;
+    align-items: center;
+    padding: 1px 1px;
+    z-index: 1000;
+}
+
+.designer {
+    margin-right: 5px;
+}
+
+.divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: black;
+}
+
+.years {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1900px;
+}
+
+.year {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    /* Mantenha a navegação no topo */
+    right: 0;
+    /* Alinha a navegação à direita */
+    margin: 0;
+    /* Remove a margem */
+    background-color: #FBF0D9;
+    /* Fundo igual ao do corpo */
+    display: flex;
+    /* Usar flexbox para alinhar elementos */
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Remove a margem */
+    display: flex;
+    /* Alinha os itens horizontalmente */
+}
+
+nav li {
+    margin: 0 15px;
+    /* Ajusta a margem horizontal */
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+body {
+    background-color: #FBF0D9;
+    /* Background color */
+    font-family: 'Poppins', sans-serif;
+    /* Use Poppins font */
+    margin: 0;
+    /* Remove default margins */
+    padding: 10px;
+    /* Internal padding */
+}
+
+h1 {
+    color: #B02B29;
+    /* Red color for the title */
+    text-align: right;
+    /* Align to the right */
+    margin-right: 20px;
+    margin-top: 50px;
+    /* Remove top margin */
+}
+
+p {
+    font-size: 16px;
+    /* Font size for the paragraph */
+    line-height: 1.5;
+    /* Line height for better readability */
+    margin-left: 980px;
+    color: black;
+    /* Red color for the title */
+    text-align: left;
+    /* Align to the right */
+    margin-top: 0;
+    /* Remove top margin */
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    /* Usar flexbox para layout lado a lado */
+    align-items: flex-start;
+    /* Alinha o carrossel e o texto na parte superior */
+    margin-top: 2px;
+    /* Espaço entre o texto e o carrossel */
+}
+
+/* Image Carousel */
+.image-carousel {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    /* Centraliza os botões e a imagem */
+    margin-right: 550px;
+    margin-top: -312px;
+}
+
+.image-carousel img {
+    height: 500px;
+    /* Defina uma altura fixa para as imagens */
+    width: auto;
+    /* Mantém a proporção da imagem */
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: black;
+    /* Cor das setas */
+    cursor: pointer;
+    align-content: center;
+}
+
+.arrow:hover {
+    color: #B02B29;
+    /* Cor ao passar o mouse */
+}
+
+/* Text Content */
+.text-content {
+    max-width: 600px;
+    /* Limita a largura do texto */
+}
